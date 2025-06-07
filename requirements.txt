@@ -1,0 +1,11 @@
+# Core Libraries
+python-telegram-bot~=20.0
+requests~=2.31
+pandas~=2.0
+aiohttp~=3.8
+pytz~=2023.3
+TA-Lib~=0.4.24 # Note: TA-Lib can be tricky. Railway usually handles it well.
+rich~=13.0
+
+# Google Cloud Translation
+google-cloud-translate~=2.0
