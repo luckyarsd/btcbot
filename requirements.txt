@@ -4,7 +4,7 @@ requests~=2.31
 pandas~=2.0
 aiohttp~=3.8
 pytz~=2023.3
-TA-Lib~=0.4.24 # Note: TA-Lib can be tricky. Railway usually handles it well.
+TA-Lib # Just TA-Lib, as the C library is pre-installed
 rich~=13.0
 
 # Google Cloud Translation
