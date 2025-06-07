@@ -1,12 +1,12 @@
-# Use a specific Python base image
-FROM python:3.10-slim-buster
+# Use a Python 3.10 slim image based on Debian Bullseye
+FROM python:3.10-slim-bullseye
 
 # Install system dependencies required for TA-Lib and others
 # apt-get update: Updates the package list
 # apt-get install -y --no-install-recommends: Installs packages without recommended dependencies
 #   build-essential: For compiling C extensions (like TA-Lib)
-#   libta-lib-dev: The actual TA-Lib C library development files
-#   git: Often useful for cloning repos, though not strictly needed by your app
+#   libta-lib-dev: The actual TA-Lib C library development files (hopefully found now)
+#   git: Often useful for cloning repos
 #   tzdata: For timezone data (pytz dependency)
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -26,9 +26,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of your application code
 COPY . .
 
-# Ensure your bot.py is executable (optional but good practice)
-# RUN chmod +x bot.py
-
 # Define the command to run your application
-# This replaces the Procfile for Docker deployments
 CMD ["python", "bot.py"]
